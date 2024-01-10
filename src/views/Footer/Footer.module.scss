@@ -1,0 +1,43 @@
+.container {
+    display: grid;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-areas: 
+    "logo"
+    "phone"
+    "socseti"
+    "developer"
+    "copyright";
+
+    @media (min-width: 580px) {
+        align-items: center;
+        justify-content: space-between;
+        grid-template-areas:
+        "logo phone"
+        "logo socseti"
+        "developer developer"
+        "copyright copyright";
+        grid-template-columns: 2fr 1fr;
+    }
+    
+    .logo {
+        grid-area: logo;
+    }
+
+    .phone {
+        grid-area: phone;
+    }
+
+    .socseti {
+        grid-area: socseti;
+    }
+
+    .developer {
+        grid-area: developer;
+    }
+
+    .copyright {
+        grid-area: copyright;
+    }
+}
