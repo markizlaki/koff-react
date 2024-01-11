@@ -1,1 +1,0 @@
-export const Socseti = () => (<div>Socseti</div>)

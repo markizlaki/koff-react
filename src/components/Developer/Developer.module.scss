@@ -1,0 +1,13 @@
+.list {
+    @media (min-width: 580px) {
+        grid-column: 1/2;
+    }
+}
+
+.item {
+    margin-bottom: 8px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

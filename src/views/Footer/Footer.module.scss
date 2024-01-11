@@ -1,12 +1,22 @@
+.footer {
+    background-color: #1c1c1c;
+    color: #f1e9e4;
+    padding: 32px 0 40px;
+
+    @media (min-width: 820px) {
+        padding-top: 40px;
+    }
+}
+
 .container {
     display: grid;
-    gap: 16px;
+    gap: 24px;
     align-items: center;
     justify-content: space-between;
     grid-template-areas: 
     "logo"
     "phone"
-    "socseti"
+    "contacts"
     "developer"
     "copyright";
 
@@ -15,29 +25,35 @@
         justify-content: space-between;
         grid-template-areas:
         "logo phone"
-        "logo socseti"
+        "logo contacts"
         "developer developer"
         "copyright copyright";
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 3fr 1fr;
     }
-    
-    .logo {
+}
+
+.logo {
         grid-area: logo;
-    }
+        width: 230px;
+}
 
-    .phone {
+.phone {
         grid-area: phone;
-    }
+}
 
-    .socseti {
-        grid-area: socseti;
+.contacts {
+    grid-area: contacts;
+    
+    @media (min-width: 580px) {
+        grid-column: 2 / 3;
+        justify-self: start;
     }
+}
 
-    .developer {
-        grid-area: developer;
-    }
+.developer {
+    grid-area: developer;
+}
 
-    .copyright {
-        grid-area: copyright;
-    }
+.copyright {
+    grid-area: copyright;
 }
