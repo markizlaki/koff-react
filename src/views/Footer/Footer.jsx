@@ -12,11 +12,13 @@ export const Footer = () => (
       <div className={s.logo}>
         <Logo />
       </div>
-      <div className={s.phone}>
-        <Phone />
-      </div>
-      <div className={s.contacts}>
-        <Contacts />
+      <div className={s.info}>
+        <div className={s.phone}>
+          <Phone />
+        </div>
+        <div className={s.contacts}>
+          <Contacts />
+        </div>
       </div>
       <div className={s.developer}>
         <Developer />
