@@ -1,7 +1,8 @@
 .footer {
     background-color: #1c1c1c;
-    color: #f1e9e4;
-    padding: 32px 0 40px;
+    color: #ffffff;
+    padding-top: 32px;
+    padding-bottom: 40px;
 
     @media (min-width: 820px) {
         padding-top: 40px;
@@ -9,69 +10,47 @@
 }
 
 .container {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 24px;
-    align-items: center;
-    justify-content: space-between;
-    grid-template-areas: 
-    "logo"
-    "phone"
-    "contacts"
-    "developer"
-    "copyright";
 
     @media (min-width: 580px) {
-        align-items: center;
-        justify-content: space-between;
-        grid-template-areas:
-        "logo phone"
-        "logo contacts"
-        "developer developer"
-        "copyright copyright";
-        grid-template-columns: 3fr 1fr;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: 820px) {
+        gap: 32px;
     }
 }
 
 .logo {
-        grid-area: logo;
-        width: 230px;
-}
-
-.info {
-    @media (min-width: 580px) {
-        justify-self: end;
-    }
-}
-
-.phone {
-    grid-area: phone;
-    padding-bottom: 20px;
+    width: 230px;
 
     @media (min-width: 580px) {
-        grid-column: 2 / 3;
-        justify-self: end;
+        grid-column: 1 / 2;
     }
+
 
     @media (min-width: 820px) {
-        grid-column: 2 / 3;
-        grid-template-columns: 2fr 1fr;
-        justify-self: end;
+        width: 330px;
+    }
+}
+
+.developers {
+    @media (min-width: 580px) {
+        grid-column: 1 / 2;
     }
 }
 
 .contacts {
-    grid-area: contacts;
-    
     @media (min-width: 580px) {
         grid-column: 2 / 3;
-        justify-self: end;
     }
 }
 
-.developer {
-    grid-area: developer;
-}
-
 .copyright {
-    grid-area: copyright;
+    @media (min-width: 580px) {
+        grid-column: 1 / 2;
+    }
 }

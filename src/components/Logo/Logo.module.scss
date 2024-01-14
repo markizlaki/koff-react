@@ -1,15 +1,11 @@
-.logo {
-    position: relative;
-
-    @media (min-width: 580px) {
-        grid-column: 1/2;
-    }
-    
-    @media (min-width: 820px) {
-        width: 500px;
-    }
+.img {
+    width: 100%;
 }
 
-.logo img {
-    width: 500px;
+.link {
+    border-radius: 4px;
+
+    &:focus-visible {
+        outline-color: #780096;
+    }
 }

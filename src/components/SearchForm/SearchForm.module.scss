@@ -1,26 +1,17 @@
-.search {
-    grid-area: search;
+.form {
     position: relative;
     width: 100%;
     height: 38px;
-
-    @media (min-width: 820px) {
-        max-width: 408px;
-        justify-self: center;
-    }
-
-    @media (min-width: 1120px) {
-        max-width: 514px;
-    }
 }
 
 .input {
     width: 100%;
     height: 100%;
-    padding: 0 40px 0 24px;
+    padding: 11px 24px;
+    border: 1px solid transparent;
     border-radius: 32px;
     background-color: #eeeff2;
-    border: none;
+    outline: none;
 
     &::placeholder {
         color: #969eae;
@@ -28,11 +19,11 @@
 
     &:focus-visible,
     &:hover {
-        outline: 1px solid #dfe3eb;
+        border-color: #dfe3eb;
     }
 }
 
-.btn {
+.button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -40,9 +31,9 @@
     display: block;
     width: 16px;
     height: 16px;
-    border-radius: 4px;
     outline-offset: 4px;
     outline: 1px solid transparent;
+    border-radius: 4px;
 
     &:hover,
     &:active {

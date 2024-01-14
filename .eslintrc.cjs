@@ -17,6 +17,12 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     "react/react-in-jsx-scope": "off",
     "react/prop-types": 0,
     "no-console": "off",
@@ -119,7 +125,7 @@ module.exports = {
     "func-call-spacing": "error",
     "indent": [
       "error",
-      2,
+      4,
       {
         "CallExpression": {
           "arguments": 1

@@ -1,31 +1,25 @@
-import { Copyright } from "../../components/Copyright/Copyright.jsx";
-import { Logo } from "../../components/Logo/Logo.jsx";
-import { Phone } from "../../components/Phone/Phone.jsx";
-import { Contacts } from "../../components/Contacts/Contacts.jsx";
 import { Container } from "../Container/Container.jsx";
 import s from "./Footer.module.scss";
-import { Developer } from "./../../components/Developer/Developer.jsx";
+import { Logo } from "./../../components/Logo/Logo";
+import { Contacts } from "../../components/Contacts/Contacts.jsx";
+import { Developers } from "./../../components/Developers/Developers";
 
 export const Footer = () => (
-  <footer className={s.footer}>
-    <Container className={s.container}>
-      <div className={s.logo}>
-        <Logo />
-      </div>
-      <div className={s.info}>
-        <div className={s.phone}>
-          <Phone />
-        </div>
-        <div className={s.contacts}>
-          <Contacts />
-        </div>
-      </div>
-      <div className={s.developer}>
-        <Developer />
-      </div>
-      <div className={s.copyright}>
-        <Copyright />
-      </div>
-    </Container>
-  </footer>
+    <footer className={s.footer}>
+        <Container className={s.container}>
+            <div className={s.logo}>
+                <Logo />
+            </div>
+
+            <div className={s.contacts}>
+                <Contacts />
+            </div>
+
+            <div className={s.developers}>
+                <Developers />
+            </div>
+
+            <p className={s.copyright}>© Koff, 2024</p>
+        </Container>
+    </footer>
 );
