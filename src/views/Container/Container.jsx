@@ -8,4 +8,3 @@ export const Container = (props) =>
     ) : (
         <div className={s.container}>{props.children}</div>
     );
-

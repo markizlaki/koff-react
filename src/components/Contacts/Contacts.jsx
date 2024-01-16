@@ -14,13 +14,14 @@ export const Contacts = () => (
                     fill="currentColor"
                 />
             </svg>
-
-            <span>+7 (939) 839 12 97</span>
         </a>
 
         <ul className={s.list}>
             <li>
-                <a className={s.link} href="#" aria-label="Ссылка на группу в VK">
+                <a
+                    className={s.link}
+                    href="#"
+                    aria-label="Ссылка на группу в VK">
                     <svg
                         width="16"
                         height="16"
@@ -35,7 +36,10 @@ export const Contacts = () => (
                 </a>
             </li>
             <li>
-                <a className={s.link} href="#" aria-label="Ссылка на канал в Youtube">
+                <a
+                    className={s.link}
+                    href="#"
+                    aria-label="Ссылка на канал в Youtube">
                     <svg
                         width="16"
                         height="16"
@@ -50,7 +54,10 @@ export const Contacts = () => (
                 </a>
             </li>
             <li>
-                <a className={s.link} href="#" aria-label="Ссылка на чат в Telegram">
+                <a
+                    className={s.link}
+                    href="#"
+                    aria-label="Ссылка на чат в Telegram">
                     <svg
                         width="16"
                         height="16"
