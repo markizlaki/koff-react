@@ -14,6 +14,7 @@ export const Contacts = () => (
                     fill="currentColor"
                 />
             </svg>
+            +7 (939) 839 12 97
         </a>
 
         <ul className={s.list}>
