@@ -40,12 +40,12 @@ export const Card = () => {
 
                         <table className={s.table}>
                             <tbody>
-                                {data.characteristics.map((item, i) => (
+                                {/* {data.characteristics.map((item, i) => (
                                     <tr className={s.row} key={i}>
                                         <td className={s.field}>{item[0]}</td>
                                         <td className={s.value}>{item[1]}</td>
                                     </tr>
-                                ))}
+                                ))} */}
                             </tbody>
                         </table>
                     </div>
