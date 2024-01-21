@@ -20,6 +20,10 @@ export const fetchProduct = createAsyncThunk(
                     error: "не удалось загрузить товар",
                 });
             }
+
+            if (response.status === 404) {
+                throw new Error("Not Found", { status: 404 });
+            }
             throw new Error("не удалось загрузить товар");
         }
 

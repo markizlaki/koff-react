@@ -19,6 +19,8 @@ export const fetchCategories = createAsyncThunk(
                     status: response.status,
                     error: "Не удалось получить каталог"
                 });
+            } else if (response.status === 404) {
+                throw new Response("Not Found", { status: 404 });
             }
             throw new Error("не удалось получить каталог");
         }

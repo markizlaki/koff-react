@@ -8,6 +8,8 @@ import { Catalog } from "./views/Catalog/Catalog";
 import { Goods } from "./views/Goods/Goods";
 import { Card } from "./components/Card/Card";
 import { Cart } from "./components/Cart/Cart";
+import { ErrorPage } from "./views/ErrorPage/ErrorPage";
+import { Navigation } from "./components/Navigation/Navigation";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +24,7 @@ const router = createBrowserRouter([
                 <Footer />
             </>
         ),
+        errorElement: <ErrorPage />,
     },
     {
         path: "/favorite",
@@ -35,6 +38,7 @@ const router = createBrowserRouter([
                 <Footer />
             </>
         ),
+        errorElement: <ErrorPage />,
     },
     {
         path: "/category",
@@ -48,6 +52,7 @@ const router = createBrowserRouter([
                 <Footer />
             </>
         ),
+        errorElement: <ErrorPage />,
     },
     {
         path: "/search",
@@ -61,6 +66,7 @@ const router = createBrowserRouter([
                 <Footer />
             </>
         ),
+        errorElement: <ErrorPage />,
     },
     {
         path: "/cart",
@@ -73,6 +79,7 @@ const router = createBrowserRouter([
                 <Footer />
             </>
         ),
+        errorElement: <ErrorPage />,
     },
     {
         path: "/product/:productId",
@@ -86,6 +93,12 @@ const router = createBrowserRouter([
                 <Footer />
             </>
         ),
+        errorElement: <ErrorPage />,
+    },
+    {
+        path: "/",
+        element: <Navigation />,
+        errorElement: <ErrorPage />,
     },
 ]);
 

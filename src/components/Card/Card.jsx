@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchProduct } from "../../store/product/product.slice";
 import { Slider } from "../Slider/Slider";
+import { FavoriteButton } from "../FavoriteButton/FavoriteButton";
 
 export const Card = () => {
     const { productId } = useParams();
@@ -17,10 +18,17 @@ export const Card = () => {
         dispatch(fetchProduct(productId));
     }, [dispatch, productId]);
 
+    console.log(productId);
+
+    if (!data) {
+        return (
+            <div style={{ color: "red", fontSize: "30px" }}>
+                Товара с таким ID не найдено!
+            </div>
+        );
+    }
     if (loading) return <div>Загрузка...</div>;
     if (error) return <div>Ошибка: {error}</div>;
-
-    console.log(data);
 
     return (
         <section className={s.card}>
@@ -40,34 +48,19 @@ export const Card = () => {
 
                         <table className={s.table}>
                             <tbody>
-                                {/* {data.characteristics.map((item, i) => (
+                                {data.characteristics.map((item, i) => (
                                     <tr className={s.row} key={i}>
                                         <td className={s.field}>{item[0]}</td>
                                         <td className={s.value}>{item[1]}</td>
                                     </tr>
-                                ))} */}
+                                ))}
                             </tbody>
                         </table>
                     </div>
 
                     <div className={s.btns}>
                         <button className={s.btn}>В корзину</button>
-                        <button className={s.like}>
-                            <svg
-                                width="16"
-                                height="16"
-                                viewBox="0 0 16 16"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M8.41301 13.8733C8.18634 13.9533 7.81301 13.9533 7.58634 13.8733C5.65301 13.2133 1.33301 10.46 1.33301 5.79332C1.33301 3.73332 2.99301 2.06665 5.03967 2.06665C6.25301 2.06665 7.32634 2.65332 7.99967 3.55998C8.67301 2.65332 9.75301 2.06665 10.9597 2.06665C13.0063 2.06665 14.6663 3.73332 14.6663 5.79332C14.6663 10.46 10.3463 13.2133 8.41301 13.8733Z"
-                                    fill="white"
-                                    stroke="currentColor"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
-                        </button>
+                        <FavoriteButton className={s.like} id={data.id} />
                     </div>
                 </div>
             </Container>

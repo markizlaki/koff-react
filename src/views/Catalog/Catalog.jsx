@@ -3,6 +3,7 @@ import s from "./Catalog.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchCategories } from "../../store/categories/categories.slice";
+import { Link } from "react-router-dom";
 
 export const Catalog = () => {
     const dispatch = useDispatch();
@@ -22,11 +23,11 @@ export const Catalog = () => {
                 <ul className={s.list}>
                     {data.map((item, i) => (
                         <li key={i}>
-                            <a
+                            <Link
                                 className={s.link}
-                                href={`/category?slug=${item}`}>
+                                to={`/category?category=${item}`}>
                                 {item}
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>
