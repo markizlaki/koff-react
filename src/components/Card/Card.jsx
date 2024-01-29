@@ -20,6 +20,9 @@ export const Card = () => {
 
     console.log(productId);
 
+    if (loading) return <div>Загрузка...</div>;
+    if (error) return <div>Ошибка: {error}</div>;
+
     if (!data) {
         return (
             <div style={{ color: "red", fontSize: "30px" }}>
@@ -27,19 +30,19 @@ export const Card = () => {
             </div>
         );
     }
-    if (loading) return <div>Загрузка...</div>;
-    if (error) return <div>Ошибка: {error}</div>;
 
     return (
         <section className={s.card}>
             <Container className={s.container}>
-                <h2 className={s.title}>Кресло с подлокотниками</h2>
+                <h2 className={s.title}>{data.name}</h2>
 
                 <Slider data={data} />
 
                 <div className={s.info}>
-                    <p className={s.price}>{"5000".toLocaleString()}&nbsp;₽</p>
-                    <p className={s.article}>арт. 84348945757</p>
+                    <p className={s.price}>
+                        {data.price.toLocaleString()}&nbsp;₽
+                    </p>
+                    <p className={s.article}>арт. {data.article}</p>
 
                     <div>
                         <h3 className={s.characteristicsTitle}>
