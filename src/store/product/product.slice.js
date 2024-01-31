@@ -3,11 +3,11 @@ import { API_URL } from "../../const";
 
 export const fetchProduct = createAsyncThunk(
     "product/fetchProduct",
-    async (id, thunkAPI) => {
+    async (params, thunkAPI) => {
         const state = thunkAPI.getState();
         const token = state.auth.accessToken;
 
-        const response = await fetch(`${API_URL}api/products/${id}`, {
+        const response = await fetch(`${API_URL}api/products/${params}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -40,7 +40,13 @@ const initialState = {
 const productSlice = createSlice({
     name: "product",
     initialState,
-    reducers: {},
+    reducers: {
+        clearProduct(state) {
+            state.data = null;
+            state.loading = false;
+            state.error = null;
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(fetchProduct.pending, (state) => {
@@ -58,5 +64,7 @@ const productSlice = createSlice({
             });
     },
 });
+
+export const { clearProduct } = productSlice.actions;
 
 export default productSlice.reducer;

@@ -40,7 +40,7 @@ export const Goods = () => {
         <section className={s.goods}>
             <Container>
                 <h2 className={`${s.title} visually-hidden`}>Список товаров</h2>
-                {data.length ? (
+                {!loading && data.length ? (
                     <>
                         <ul className={s.list}>
                             {data.map((item) => (

@@ -5,9 +5,10 @@ import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
-import { fetchProduct } from "../../store/product/product.slice";
+import { clearProduct, fetchProduct } from "../../store/product/product.slice";
 import { Slider } from "../Slider/Slider";
 import { FavoriteButton } from "../FavoriteButton/FavoriteButton";
+import { AddCartButton } from "../AddCartButton/AddCartButton";
 
 export const Card = () => {
     const { productId } = useParams();
@@ -16,9 +17,11 @@ export const Card = () => {
 
     useEffect(() => {
         dispatch(fetchProduct(productId));
-    }, [dispatch, productId]);
 
-    console.log(productId);
+        return () => {
+            dispatch(clearProduct());
+        };
+    }, [dispatch, productId]);
 
     if (loading) return <div>Загрузка...</div>;
     if (error) return <div>Ошибка: {error}</div>;
@@ -62,7 +65,7 @@ export const Card = () => {
                     </div>
 
                     <div className={s.btns}>
-                        <button className={s.btn}>В корзину</button>
+                        <AddCartButton className={s.btn} id={data.id} />
                         <FavoriteButton className={s.like} id={data.id} />
                     </div>
                 </div>

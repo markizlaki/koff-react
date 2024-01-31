@@ -10,6 +10,8 @@ import { Card } from "./components/Card/Card";
 import { Cart } from "./views/Cart/Cart";
 import { ErrorPage } from "./views/ErrorPage/ErrorPage";
 import { Navigation } from "./components/Navigation/Navigation";
+import { Order } from "./components/Order/Order";
+import { Breadcrumbs } from "./components/Breadcrumbs/Breadcrumbs";
 
 const router = createBrowserRouter([
     {
@@ -47,6 +49,7 @@ const router = createBrowserRouter([
                 <Header />
                 <main>
                     <Catalog />
+                    <Breadcrumbs />
                     <Goods />
                 </main>
                 <Footer />
@@ -88,7 +91,21 @@ const router = createBrowserRouter([
                 <Header />
                 <main>
                     <Catalog />
+                    <Breadcrumbs />
                     <Card />
+                </main>
+                <Footer />
+            </>
+        ),
+        errorElement: <ErrorPage />,
+    },
+    {
+        path: "/order/:orderId",
+        element: (
+            <>
+                <Header />
+                <main>
+                    <Order />
                 </main>
                 <Footer />
             </>
@@ -100,6 +117,19 @@ const router = createBrowserRouter([
         element: <Navigation />,
         errorElement: <ErrorPage />,
     },
+    // {
+    //     path: "*",
+    //     element: (
+    //         <>
+    //             <Header />
+    //             <main>
+    //                 <ErrorPage />
+    //             </main>
+    //             <Footer />
+    //         </>
+    //     ),
+    //     errorElement: <ErrorPage />,
+    // },
 ]);
 
 const App = () => {
